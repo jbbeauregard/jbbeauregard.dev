@@ -51,7 +51,7 @@
 <!-- ------------------------- Hero ------------------------- -->
 <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-dotnet-950 to-black pt-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-dotnet-400 font-mono text-sm sm:text-base mb-4 tracking-widest uppercase">@T("Hello, I'm", "Bonjour, je suis")</p>
+        <p class="text-dotnet-400 font-mono text-sm sm:text-base mb-4 tracking-widest uppercase">@T("Hello, I'm", "Hello, je suis")</p>
         <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
             Jérémy Beauregard
         </h1>
@@ -241,24 +241,24 @@
     private const string _linkedInUrl = "https://www.linkedin.com/in/j%C3%A9r%C3%A9my-benjamin-beauregard-1b805696/";
 
     private bool   _mobileMenuOpen;
-    private string _lang = "en";
+    private string _lang = "fr";
 
     private void ToggleMobileMenu() => _mobileMenuOpen = !_mobileMenuOpen;
     private void ToggleLang()       => _lang = _lang == "en" ? "fr" : "en";
     private string T(string en, string fr) => _lang == "en" ? en : fr;
 
     private string HeroPara    => T(
-        "10 years building serious software — web, mobile, desktop, API, cloud, AI. Available after hours. No fluff, no endless meetings. Just clean code shipped on time.",
-        "10 ans à bâtir des logiciels sérieux — web, mobile, bureau, API, infonuagique, IA. Disponible après les heures. Pas de niaisage, pas de réunions plates. Juste du code propre, livré à temps.");
+        "10 years building serious software. Available nights and weekends. No fluff, no overengineering. Just clean and reliable code shipped on time.",
+        "10 ans à bâtir du logiciel sérieux. Disponible les soirs et fins de semaine. Pas de chichi, pas d'usine à gaz. Juste du code propre et fiable, livré à temps.");
     private string AboutPara1  => T(
-        "10 years in the .NET trenches — and yes, I'm still smiling. By day I'm a developer at Hydro-Québec, keeping the lights on for an entire province (literally). That kind of responsibility tends to make you write very reliable code.",
-        "10 ans dans les tranchées .NET — pis oui, je souris encore. Le jour, je suis développeur chez Hydro-Québec, à garder les lumières allumées pour toute une province (littéralement). Ce niveau de responsabilité, ça t'apprend vite à écrire du code fiable.");
+        "By day I'm a developer at Hydro-Québec, keeping the lights on for an entire province (literally). That kind of responsibility tends to make you write very reliable code.",
+        "Le jour, je suis développeur chez Hydro-Québec, à garder les lumières allumées pour toute une province (littéralement). Ce niveau de responsabilité, ça t'apprend vite à écrire du code fiable.");
     private string AboutPara2  => T(
-        "After hours, I trade the enterprise keyboard for a freelance one — ideally somewhere with decent Wi-Fi and a good black coffee. Web, mobile, desktop, API, cloud, AI: if you need it built properly, I'm your guy. No drama, just results.",
-        "Après les heures, j'échange le clavier d'entreprise pour celui du freelance — idéalement quelque part avec un bon Wi-Fi pis un bon café noir. Web, mobile, bureau, API, infonuagique, IA : si vous avez besoin que ça soit fait comme du monde, je suis votre gars. Pas de bull, juste des résultats.");
+        "After hours, I trade the enterprise keyboard for a freelance one. Ideally somewhere with decent Wi-Fi and a good black coffee. Web, mobile, desktop, API, cloud, AI: if you need it built properly, I'm your guy. No big sales pitch, just results.",
+        "Après les heures, j'échange le clavier d'entreprise pour celui de freelance. Idéalement quelque part avec un bon Wi-Fi et un bon café noir. Web, mobile, bureau, API, infonuagique, IA : si vous avez besoin que ça soit fait comme du monde, je suis votre homme. Pas de gros pitch de vente, juste des résultats.");
     private string ContactPara => T(
-        "Have a project in mind or want to discuss an opportunity? I'm currently available for freelance work — feel free to reach out!",
-        "Vous avez un projet en tête ou vous voulez jaser d'une opportunité ? Je suis disponible pour du travail en freelance — gênez-vous pas pour me contacter !");
+        "Have a project in mind or want to discuss an opportunity? I'm currently available for freelance work. Feel free to reach out!",
+        "Vous avez un projet en tête ou vous voulez jaser d'une opportunité ? Je suis disponible pour du travail en freelance. Gênez-vous pas pour me contacter !");
 
     private readonly string[] _skills =
     [
