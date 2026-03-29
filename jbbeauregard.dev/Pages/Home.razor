@@ -230,7 +230,7 @@
 <footer class="bg-black py-8 border-t border-neutral-800 fade-section">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p class="text-neutral-500 text-sm">
-            &copy; @DateTime.UtcNow.Year Jérémy-Benjamin Beauregard &mdash; @T("Built with", "Construit avec") Blazor &amp; Tailwind.
+            &copy; @DateTime.UtcNow.Year Jérémy-Benjamin Beauregard &mdash; @T("Built with", "Construit avec") Blazor &amp; Tailwind CSS.
         </p>
     </div>
 </footer>
@@ -248,11 +248,11 @@
     private string T(string en, string fr) => _lang == "en" ? en : fr;
 
     private string HeroPara    => T(
-        "10 years building serious software. Available nights and weekends. No fluff, no overengineering. Just clean and reliable code shipped on time.",
-        "10 ans à bâtir du logiciel sérieux. Disponible les soirs et fins de semaine. Pas de chichi, pas d'usine à gaz. Juste du code propre et fiable, livré à temps.");
+        "10 years and more building serious software. Available nights and weekends. No fluff, no overengineering. Just clean and reliable code shipped on time.",
+        "10 ans et plus à bâtir du logiciel sérieux. Disponible les soirs et fins de semaine. Pas de superflu, pas d'usine à gaz. Juste du code propre et fiable, livré à temps.");
     private string AboutPara1  => T(
         "By day I'm a developer at Hydro-Québec, keeping the lights on for an entire province (literally). That kind of responsibility tends to make you write very reliable code.",
-        "Le jour, je suis développeur chez Hydro-Québec, à garder les lumières allumées pour toute une province (littéralement). Ce niveau de responsabilité, ça t'apprend vite à écrire du code fiable.");
+        "Le jour, je suis développeur chez Hydro-Québec, à garder les lumières allumées pour toute une province (carrément). Ce niveau de responsabilité, ça t'apprend vite à écrire du code à toute épreuve.");
     private string AboutPara2  => T(
         "After hours, I trade the enterprise keyboard for a freelance one. Ideally somewhere with decent Wi-Fi and a good black coffee. Web, mobile, desktop, API, cloud, AI: if you need it built properly, I'm your guy. No big sales pitch, just results.",
         "Après les heures, j'échange le clavier d'entreprise pour celui de freelance. Idéalement quelque part avec un bon Wi-Fi et un bon café noir. Web, mobile, bureau, API, infonuagique, IA : si vous avez besoin que ça soit fait comme du monde, je suis votre homme. Pas de gros pitch de vente, juste des résultats.");
@@ -264,7 +264,7 @@
     [
         "C#", ".NET", "Blazor", "MAUI",
         "ASP.NET Core", "Entity Framework", "SQL",
-        "HTML", "CSS", "JavaScript", "Tailwind",
+        "HTML", "CSS", "JavaScript", "Tailwind CSS",
         "Azure", "Cloudflare", "Git", "GitHub Actions"
     ];
 
@@ -284,7 +284,7 @@
             "Excabec — Landing Page",
             "Landing page built for Les Services de main d'œuvre Excabec, a Québec-based workforce services company. Mobile-responsive design with a contact form so potential clients can reach the team directly. Deployed and served globally via Cloudflare.",
             "Page vitrine conçue pour Les Services de main d'œuvre Excabec, une compagnie québécoise de services de main-d'œuvre. Design adaptatif avec formulaire de contact pour joindre l'équipe directement. Déployée et distribuée mondialement via Cloudflare.",
-            ["Blazor", "HTML", "CSS", "JavaScript", "Tailwind", "Cloudflare"],
+            ["Blazor", "HTML", "CSS", "JavaScript", "Tailwind CSS", "Cloudflare"],
             "linear-gradient(135deg, #000000 0%, #321a82 55%, #0a0a14 100%)",
             "🤝",
             "#")
