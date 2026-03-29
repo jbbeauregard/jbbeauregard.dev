@@ -1,0 +1,36 @@
+## ── Personal notes ────────────────────────────────────────────
+TODO.md
+
+## ── Build output ──────────────────────────────────────────────
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+release/
+
+## ── Visual Studio ─────────────────────────────────────────────
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+.vscode/
+
+## ── Rider / JetBrains ─────────────────────────────────────────
+.idea/
+*.sln.iml
+
+## ── OS artefacts ──────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+## ── NuGet ─────────────────────────────────────────────────────
+*.nupkg
+*.snupkg
+project.lock.json
+packages/
+!**/[Pp]ackages/build/
+
+## ── Publish profiles ──────────────────────────────────────────
+**/Properties/PublishProfiles/
+**/publish/

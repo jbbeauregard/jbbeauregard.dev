@@ -1,0 +1,292 @@
+﻿@page "/"
+
+<PageTitle>Jérémy Beauregard | .NET Freelance Developer</PageTitle>
+
+<!-- ------------------------- Navigation ------------------------- -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-neutral-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="#home" class="text-dotnet-400 hover:text-dotnet-300 font-semibold text-sm tracking-wide transition-colors duration-200">
+                jbbeauregard.dev
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home"      class="text-neutral-300 hover:text-white transition-colors duration-200 text-sm font-medium">@T("Home", "Accueil")</a>
+                <a href="#about"     class="text-neutral-300 hover:text-white transition-colors duration-200 text-sm font-medium">@T("About", "À propos")</a>
+                <a href="#portfolio" class="text-neutral-300 hover:text-white transition-colors duration-200 text-sm font-medium">Portfolio</a>
+                <a href="#contact"   class="bg-dotnet-700 hover:bg-dotnet-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors duration-200">Contact</a>
+                <button @onclick="ToggleLang" class="text-xs font-mono text-neutral-400 hover:text-white border border-neutral-700 hover:border-neutral-500 px-2.5 py-1 rounded transition-colors duration-200">
+                    @(_lang == "en" ? "FR" : "EN")
+                </button>
+            </div>
+            <div class="md:hidden flex items-center gap-3">
+                <button @onclick="ToggleLang" class="text-xs font-mono text-neutral-400 hover:text-white border border-neutral-700 hover:border-neutral-500 px-2.5 py-1 rounded transition-colors duration-200">
+                    @(_lang == "en" ? "FR" : "EN")
+                </button>
+                <button @onclick="ToggleMobileMenu" class="text-neutral-400 hover:text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        @if (_mobileMenuOpen)
+                        {
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        }
+                        else
+                        {
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        }
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    @if (_mobileMenuOpen)
+    {
+        <div class="md:hidden bg-black border-t border-neutral-800 px-4 py-4 space-y-1">
+            <a href="#home"      @onclick="ToggleMobileMenu" class="block text-neutral-300 hover:text-white transition-colors text-sm font-medium py-2">@T("Home", "Accueil")</a>
+            <a href="#about"     @onclick="ToggleMobileMenu" class="block text-neutral-300 hover:text-white transition-colors text-sm font-medium py-2">@T("About", "À propos")</a>
+            <a href="#portfolio" @onclick="ToggleMobileMenu" class="block text-neutral-300 hover:text-white transition-colors text-sm font-medium py-2">Portfolio</a>
+            <a href="#contact"   @onclick="ToggleMobileMenu" class="block text-dotnet-400 hover:text-dotnet-300 transition-colors text-sm font-medium py-2">Contact</a>
+        </div>
+    }
+</nav>
+
+<!-- ------------------------- Hero ------------------------- -->
+<section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-dotnet-950 to-black pt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-dotnet-400 font-mono text-sm sm:text-base mb-4 tracking-widest uppercase">@T("Hello, I'm", "Bonjour, je suis")</p>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+            Jérémy Beauregard
+        </h1>
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-neutral-400 mb-8">
+            @T(".NET Developer · Freelancer · Guy Who Gets Things Done",
+               "Développeur .NET · Freelance · Celui qui livre la marchandise")
+        </h2>
+        <p class="text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+            @HeroPara
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#portfolio" class="bg-dotnet-700 hover:bg-dotnet-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200 text-sm sm:text-base">
+                @T("View My Work", "Voir mes projets")
+            </a>
+            <a href="#contact" class="border border-dotnet-700 text-dotnet-400 hover:bg-dotnet-700/20 font-semibold px-8 py-3 rounded-lg transition-colors duration-200 text-sm sm:text-base">
+                @T("Get In Touch", "Me contacter")
+            </a>
+        </div>
+        <div class="mt-16 animate-bounce">
+            <a href="#about" class="text-neutral-700 hover:text-neutral-400 transition-colors">
+                <svg class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ------------------------- About ------------------------- -->
+<section id="about" class="py-24 bg-white fade-section">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">@T("About Me", "À propos")</h2>
+            <div class="w-16 h-1 bg-dotnet-700 mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+                <div class="flex items-center gap-6 mb-8">
+                    <img src="images/profile.jpg"
+                         alt="Jérémy Beauregard"
+                         class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover object-top flex-shrink-0 ring-2 ring-dotnet-600 ring-offset-4 ring-offset-white" />
+                    <div>
+                        <p class="text-neutral-900 font-bold text-xl leading-snug">Jérémy-Benjamin<br />Beauregard</p>
+                        <p class="text-dotnet-600 text-sm font-medium mt-1">@T(".NET Developer & Freelancer", "Développeur .NET & Freelance")</p>
+                    </div>
+                </div>
+                <p class="text-neutral-600 text-base sm:text-lg leading-relaxed mb-6">
+                    @AboutPara1
+                </p>
+                <p class="text-neutral-600 text-base sm:text-lg leading-relaxed mb-10">
+                    @AboutPara2
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-black hover:bg-neutral-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 text-center text-sm">
+                        @T("Hire Me", "Engagez-moi")
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-neutral-800 font-semibold text-lg mb-6">@T("Tech Stack & Skills", "Technologies & Compétences")</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    @foreach (var skill in _skills)
+                    {
+                        <div class="bg-white border border-neutral-200 rounded-lg px-4 py-3 text-sm font-medium text-neutral-700 shadow-sm text-center hover:border-dotnet-500 hover:shadow-md transition-all duration-200">
+                            @skill
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ------------------------- Portfolio ------------------------- -->
+<section id="portfolio" class="py-24 bg-black fade-section">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">@T("My Projects", "Mes projets")</h2>
+            <div class="w-16 h-1 bg-dotnet-700 mx-auto mb-6"></div>
+            <p class="text-neutral-400 max-w-xl mx-auto">
+                @T("Real work, real clients. More cards coming — stay tuned.",
+                   "Du vrai travail, de vrais clients. D'autres projets à venir — restez à l'écoute.")
+            </p>
+        </div>
+        <div class="grid grid-cols-1 max-w-sm mx-auto gap-8">
+            @foreach (var project in _projects)
+            {
+                <div class="bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                    <div class="h-44 flex items-center justify-center text-5xl" style="background: @project.GradientStyle">
+                        @project.Emoji
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-white font-bold text-lg mb-2">@project.Title</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-4 flex-1">@(_lang == "en" ? project.Description : project.DescriptionFr)</p>
+                        <div class="flex flex-wrap gap-2 mb-5">
+                            @foreach (var tag in project.Tags)
+                            {
+                                <span class="text-xs bg-neutral-800 text-dotnet-300 border border-neutral-700 px-2 py-1 rounded font-mono">@tag</span>
+                            }
+                        </div>
+                        <div class="flex gap-5 mt-auto pt-2 border-t border-neutral-800">
+                            <a href="@project.GithubUrl" target="_blank" rel="noopener noreferrer" class="text-sm text-neutral-500 hover:text-dotnet-400 transition-colors flex items-center gap-1.5">
+                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.465-2.38 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23A11.51 11.51 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .322.218.694.825.576C20.565 21.796 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                GitHub
+                            </a>
+                            @if (!string.IsNullOrEmpty(project.DemoUrl))
+                            {
+                                <a href="@project.DemoUrl" target="_blank" rel="noopener noreferrer" class="text-sm text-neutral-500 hover:text-dotnet-400 transition-colors flex items-center gap-1.5">
+                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                    @T("Live Demo", "Démo")
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- ------------------------- Contact ------------------------- -->
+<section id="contact" class="py-24 bg-white fade-section">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">@T("Get In Touch", "Me contacter")</h2>
+        <div class="w-16 h-1 bg-dotnet-700 mx-auto mb-8"></div>
+        <p class="text-neutral-600 text-base sm:text-lg leading-relaxed mb-12">
+            @ContactPara
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+            <a href="mailto:@_email"
+               class="bg-white border border-neutral-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-dotnet-500 transition-all duration-200 group">
+                <div class="w-12 h-12 bg-dotnet-50 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-dotnet-100 transition-colors">
+                    <svg class="h-6 w-6 text-dotnet-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <p class="font-semibold text-neutral-800 text-sm mb-1">Email</p>
+                <p class="text-dotnet-700 text-xs">@_email</p>
+            </a>
+            <a href="@_gitHubUrl" target="_blank" rel="noopener noreferrer"
+               class="bg-white border border-neutral-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-dotnet-500 transition-all duration-200 group">
+                <div class="w-12 h-12 bg-dotnet-50 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-dotnet-100 transition-colors">
+                    <svg class="h-6 w-6 text-dotnet-700" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.465-2.38 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23A11.51 11.51 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .322.218.694.825.576C20.565 21.796 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </div>
+                <p class="font-semibold text-neutral-800 text-sm mb-1">GitHub</p>
+                <p class="text-dotnet-700 text-xs">github.com/jbbeauregard</p>
+            </a>
+            <a href="@_linkedInUrl" target="_blank" rel="noopener noreferrer"
+               class="bg-white border border-neutral-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-dotnet-500 transition-all duration-200 group">
+                <div class="w-12 h-12 bg-dotnet-50 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-dotnet-100 transition-colors">
+                    <svg class="h-6 w-6 text-dotnet-700" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </div>
+                <p class="font-semibold text-neutral-800 text-sm mb-1">LinkedIn</p>
+                <p class="text-dotnet-700 text-xs">jérémy-benjamin-beauregard</p>
+            </a>
+        </div>
+        <a href="mailto:@_email"
+           class="inline-flex items-center gap-2 bg-black hover:bg-neutral-800 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-200">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            @T("Send Me An Email", "Envoyer un courriel")
+        </a>
+    </div>
+</section>
+
+<!-- ------------------------- Footer ------------------------- -->
+<footer class="bg-black py-8 border-t border-neutral-800 fade-section">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-neutral-500 text-sm">
+            &copy; @DateTime.UtcNow.Year Jérémy-Benjamin Beauregard &mdash; @T("Built with", "Construit avec") Blazor &amp; Tailwind.
+        </p>
+    </div>
+</footer>
+
+@code {
+    private const string _email      = "jeremy.b.beauregard@gmail.com";
+    private const string _gitHubUrl  = "https://github.com/jbbeauregard";
+    private const string _linkedInUrl = "https://www.linkedin.com/in/j%C3%A9r%C3%A9my-benjamin-beauregard-1b805696/";
+
+    private bool   _mobileMenuOpen;
+    private string _lang = "en";
+
+    private void ToggleMobileMenu() => _mobileMenuOpen = !_mobileMenuOpen;
+    private void ToggleLang()       => _lang = _lang == "en" ? "fr" : "en";
+    private string T(string en, string fr) => _lang == "en" ? en : fr;
+
+    private string HeroPara    => T(
+        "10 years building serious software — web, mobile, desktop, API, cloud, AI. Available after hours. No fluff, no endless meetings. Just clean code shipped on time.",
+        "10 ans à bâtir des logiciels sérieux — web, mobile, bureau, API, infonuagique, IA. Disponible après les heures. Pas de niaisage, pas de réunions plates. Juste du code propre, livré à temps.");
+    private string AboutPara1  => T(
+        "10 years in the .NET trenches — and yes, I'm still smiling. By day I'm a developer at Hydro-Québec, keeping the lights on for an entire province (literally). That kind of responsibility tends to make you write very reliable code.",
+        "10 ans dans les tranchées .NET — pis oui, je souris encore. Le jour, je suis développeur chez Hydro-Québec, à garder les lumières allumées pour toute une province (littéralement). Ce niveau de responsabilité, ça t'apprend vite à écrire du code fiable.");
+    private string AboutPara2  => T(
+        "After hours, I trade the enterprise keyboard for a freelance one — ideally somewhere with decent Wi-Fi and a good black coffee. Web, mobile, desktop, API, cloud, AI: if you need it built properly, I'm your guy. No drama, just results.",
+        "Après les heures, j'échange le clavier d'entreprise pour celui du freelance — idéalement quelque part avec un bon Wi-Fi pis un bon café noir. Web, mobile, bureau, API, infonuagique, IA : si vous avez besoin que ça soit fait comme du monde, je suis votre gars. Pas de bull, juste des résultats.");
+    private string ContactPara => T(
+        "Have a project in mind or want to discuss an opportunity? I'm currently available for freelance work — feel free to reach out!",
+        "Vous avez un projet en tête ou vous voulez jaser d'une opportunité ? Je suis disponible pour du travail en freelance — gênez-vous pas pour me contacter !");
+
+    private readonly string[] _skills =
+    [
+        "C#", ".NET", "Blazor", "MAUI",
+        "ASP.NET Core", "Entity Framework", "SQL",
+        "HTML", "CSS", "JavaScript", "Tailwind",
+        "Azure", "Cloudflare", "Git", "GitHub Actions"
+    ];
+
+    private record Project(
+        string Title,
+        string Description,
+        string DescriptionFr,
+        string[] Tags,
+        string GradientStyle,
+        string Emoji,
+        string GithubUrl,
+        string DemoUrl = "");
+
+    private readonly Project[] _projects =
+    [
+        new Project(
+            "Excabec — Landing Page",
+            "Landing page built for Les Services de main d'œuvre Excabec, a Québec-based workforce services company. Mobile-responsive design with a contact form so potential clients can reach the team directly. Deployed and served globally via Cloudflare.",
+            "Page vitrine conçue pour Les Services de main d'œuvre Excabec, une compagnie québécoise de services de main-d'œuvre. Design adaptatif avec formulaire de contact pour joindre l'équipe directement. Déployée et distribuée mondialement via Cloudflare.",
+            ["Blazor", "HTML", "CSS", "JavaScript", "Tailwind", "Cloudflare"],
+            "linear-gradient(135deg, #000000 0%, #321a82 55%, #0a0a14 100%)",
+            "🤝",
+            "#")
+    ];
+}

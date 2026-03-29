@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jérémy Beauregard | .NET Freelance Developer</title>
+    <meta name="description" content="Jérémy Beauregard — .NET freelance developer with 10 years of experience. Available for web, mobile, desktop, API, cloud and AI projects." />
+    <meta property="og:title" content="Jérémy Beauregard | .NET Freelance Developer" />
+    <meta property="og:description" content="10 years of .NET experience. Available after hours for web, mobile, desktop, API, cloud and AI projects. No drama, just results." />
+    <meta property="og:image" content="https://jbbeauregard.dev/images/profile.jpg" />
+    <meta property="og:url" content="https://jbbeauregard.dev" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <base href="/" />
+    <link rel="preload" id="webassembly" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link href="jbbeauregard.dev.styles.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dotnet: {
+                            50:  '#f5f0ff',
+                            100: '#ede5ff',
+                            200: '#d8c5ff',
+                            300: '#b99af8',
+                            400: '#9a6ef3',
+                            500: '#7347e4',
+                            600: '#512BD4',
+                            700: '#4222ab',
+                            800: '#321a82',
+                            900: '#21115a',
+                            950: '#110830',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script type="importmap"></script>
+</head>
+
+<body>
+    <div id="app">
+        <svg class="loading-progress">
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+        <div class="loading-progress-text"></div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+    <script>
+        (() => {
+            const observed = new WeakSet();
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('is-visible');
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            const setup = () =>
+                document.querySelectorAll('.fade-section').forEach(el => {
+                    if (!observed.has(el)) { observed.add(el); io.observe(el); }
+                });
+
+            // Blazor renders asynchronously into #app — wait for the first DOM mutation
+            new MutationObserver(setup).observe(
+                document.getElementById('app'),
+                { childList: true, subtree: true }
+            );
+        })();
+    </script>
+</body>
+
+</html>
