@@ -144,7 +144,7 @@
                         @project.Emoji
                     </div>
                     <div class="p-6 flex flex-col flex-1">
-                        <h3 class="text-white font-bold text-lg mb-2">@project.Title</h3>
+                        <h3 class="text-white font-bold text-lg mb-2">@T(project.TitleEn, project.TitleFr)</h3>
                         <p class="text-neutral-400 text-sm leading-relaxed mb-4 flex-1">@(_lang == "en" ? project.Description : project.DescriptionFr)</p>
                         <div class="flex flex-wrap gap-2 mb-5">
                             @foreach (var tag in project.Tags)
@@ -249,13 +249,13 @@
 
     private string HeroPara    => T(
         "10 years and more building serious software. Available nights and weekends. No fluff, no overengineering. Just clean and reliable code shipped on time.",
-        "10 ans et plus à bâtir du logiciel sérieux. Disponible les soirs et fins de semaine. Pas de superflu, pas d'usine à gaz. Juste du code propre et fiable, livré à temps.");
+        "10 ans et plus à bâtir du logiciel sérieux. Disponible les soirs et fins de semaine. Pas de fla-fla, pas de trucs trop compliqués pour rien. Juste du code propre et fiable, livré à temps.");
     private string AboutPara1  => T(
-        "By day I'm a developer at Hydro-Québec, keeping the lights on for an entire province (literally). That kind of responsibility tends to make you write very reliable code.",
+        "By day I'm a developer at Hydro-Québec, keeping the lights on for an entire province (literally). That kind of responsibility tends to make you bullet proof code.",
         "Le jour, je suis développeur chez Hydro-Québec, à garder les lumières allumées pour toute une province (carrément). Ce niveau de responsabilité, ça t'apprend vite à écrire du code à toute épreuve.");
     private string AboutPara2  => T(
-        "After hours, I trade the enterprise keyboard for a freelance one. Ideally somewhere with decent Wi-Fi and a good black coffee. Web, mobile, desktop, API, cloud, AI: if you need it built properly, I'm your guy. No big sales pitch, just results.",
-        "Après les heures, j'échange le clavier d'entreprise pour celui de freelance. Idéalement quelque part avec un bon Wi-Fi et un bon café noir. Web, mobile, bureau, API, infonuagique, IA : si vous avez besoin que ça soit fait comme du monde, je suis votre homme. Pas de gros pitch de vente, juste des résultats.");
+        "After office hours, I trade the enterprise keyboard for a freelance one. Web, mobile, desktop, API, cloud, AI: if you need it built properly, I'm your guy. No big sales pitch, just results.",
+        "En dehors des heures de bureau, j'échange le clavier d'entreprise pour celui de freelance. Web, mobile, bureau, API, infonuagique, IA : si vous avez besoin que ça soit fait comme il faut, je suis votre homme. Pas de gros pitch de vente, juste des résultats.");
     private string ContactPara => T(
         "Have a project in mind or want to discuss an opportunity? I'm currently available for freelance work. Feel free to reach out!",
         "Vous avez un projet en tête ou vous voulez jaser d'une opportunité ? Je suis disponible pour du travail en freelance. Gênez-vous pas pour me contacter !");
@@ -269,7 +269,8 @@
     ];
 
     private record Project(
-        string Title,
+        string TitleEn,
+        string TitleFr,
         string Description,
         string DescriptionFr,
         string[] Tags,
@@ -282,6 +283,7 @@
     [
         new Project(
             "Excabec — Landing Page",
+            "Excabec - Page vitrine",
             "Landing page built for Les Services de main d'œuvre Excabec, a Québec-based workforce services company. Mobile-responsive design with a contact form so potential clients can reach the team directly. Deployed and served globally via Cloudflare.",
             "Page vitrine conçue pour Les Services de main d'œuvre Excabec, une compagnie québécoise de services de main-d'œuvre. Design adaptatif avec formulaire de contact pour joindre l'équipe directement. Déployée et distribuée mondialement via Cloudflare.",
             ["Blazor", "HTML", "CSS", "JavaScript", "Tailwind CSS", "Cloudflare"],
