@@ -1,6 +1,9 @@
 ﻿@page "/"
 
-<PageTitle>Jérémy Beauregard | .NET Freelance Developer</PageTitle>
+<PageTitle>
+    @T("Jérémy-B. Beauregard | .NET Freelance Developer",
+       "Jérémy-B. Beauregard | Développeur .NET freelance")
+</PageTitle>
 
 <!-- ------------------------- Navigation ------------------------- -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-neutral-800">
@@ -51,13 +54,13 @@
 <!-- ------------------------- Hero ------------------------- -->
 <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-dotnet-950 to-black pt-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-dotnet-400 font-mono text-sm sm:text-base mb-4 tracking-widest uppercase">@T("Hello, I'm", "Hello, je suis")</p>
+        <p class="text-dotnet-400 font-mono text-sm sm:text-base mb-4 tracking-widest uppercase">@T("Hello, I'm", "Bonjour, je suis")</p>
         <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-            Jérémy Beauregard
+            Jérémy-B. Beauregard
         </h1>
         <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-neutral-400 mb-8">
-            @T(".NET Developer · Freelancer · Guy Who Gets Things Done",
-               "Développeur .NET · Freelance · Celui qui livre la marchandise")
+            @T("Freelance .NET Developer",
+               "Développeur .NET freelance")
         </h2>
         <p class="text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
             @HeroPara
@@ -95,7 +98,7 @@
                          class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover object-top flex-shrink-0 ring-2 ring-dotnet-600 ring-offset-4 ring-offset-white" />
                     <div>
                         <p class="text-neutral-900 font-bold text-xl leading-snug">Jérémy-Benjamin<br />Beauregard</p>
-                        <p class="text-dotnet-600 text-sm font-medium mt-1">@T(".NET Developer & Freelancer", "Développeur .NET & Freelance")</p>
+                        <p class="text-dotnet-600 text-sm font-medium mt-1">@T("Freelance .NET Developer", "Développeur .NET freelance")</p>
                     </div>
                 </div>
                 <p class="text-neutral-600 text-base sm:text-lg leading-relaxed mb-6">
@@ -132,8 +135,8 @@
             <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">@T("My Projects", "Mes projets")</h2>
             <div class="w-16 h-1 bg-dotnet-700 mx-auto mb-6"></div>
             <p class="text-neutral-400 max-w-xl mx-auto">
-                @T("Real work, real clients. More cards coming — stay tuned.",
-                   "Du vrai travail, de vrais clients. D'autres projets à venir — restez à l'écoute.")
+                @T("Real work, real clients. More cards coming, stay tuned.",
+                   "Du vrai travail, de vrais clients. D'autres projets à venir, restez à l'écoute.")
             </p>
         </div>
         <div class="grid grid-cols-1 max-w-sm mx-auto gap-8">
