@@ -2,7 +2,6 @@
   <Folder Name="/Solution Items/">
     <File Path="build.sh" />
     <File Path="README.md" />
-    <File Path="TODO.md" />
   </Folder>
   <Project Path="jbbeauregard.dev/jbbeauregard.dev.csproj" />
 </Solution>

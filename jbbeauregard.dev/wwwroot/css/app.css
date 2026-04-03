@@ -1,8 +1,15 @@
+:root {
+    /* height of the fixed nav (matches Tailwind `h-16`) — used for scroll offset */
+    --nav-height: 4rem;
+}
+
 html, body {
     margin: 0;
     padding: 0;
     background-color: #000000; /* pure black — matches the new duotone theme */
     scroll-behavior: smooth;
+    /* prevent anchored sections from appearing underneath the fixed nav on small screens */
+    scroll-padding-top: var(--nav-height);
 }
 
 /* ── Blazor WASM loading spinner ── */
